@@ -1,0 +1,38 @@
+/***************************************************************************************
+// Sphere.java            Author: Michelle Holmes  
+//
+// The following program reads the radius of a sphere and prints the volume and surface 
+// area of the sphere.
+//***************************************************************************************
+import java.util.Scanner;     // Imports Scanner Object Class
+import java.text.DecimalFormat;  // Imports DecimalFormat Object Class
+
+public class Sphere 
+{
+ 
+//------------------------------------------------------------------------------------------
+// Reads inputed radius of sphere from user and calculates volume and surface area of sphere
+//------------------------------------------------------------------------------------------
+	
+	public static void main(String[] args) 
+	{
+		int radius;       				// Declares integer variables
+		double volume, surfaceArea;		// Declares double floating point variables
+		
+		Scanner scan = new Scanner (System.in);  // Instantiates new Scanner object
+		
+		System.out.println("What is the radius of the sphere? ");
+		radius = scan.nextInt();       // User inputs radius
+		
+		volume = (4.0/3.0) * Math.PI * Math.pow(radius, 2);  // Calculates volume using radius
+		surfaceArea = 4 * Math.PI * Math.pow(radius, 2);  // Calculates surface area using radius
+
+		DecimalFormat numform = new DecimalFormat("0.0000"); // Formats output rounded to 4 decimal places
+		
+		System.out.println("The volume of your sphere is: " + numform.format(volume));
+													// Prints formatted volume of sphere
+		
+		System.out.println("The surface area of your sphere is: " + numform.format(surfaceArea));
+													// Prints formatted surface area of sphere
+	}
+}
